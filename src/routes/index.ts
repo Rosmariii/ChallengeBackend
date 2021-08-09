@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { getcoupons, newCoupon } from "../controllers/index.controllers";
+import { getcoupons, newCoupon, assignCoupon, deleteCoupon } from "../controllers/index.controllers";
 const router = Router()
 
 router.get('/coupons', getcoupons)
 router.post('/coupons', newCoupon)
-//router.put('/coupons:id', getcoupons)
-//router.deleted('/coupons:id', getcoupons)
+router.patch('/coupons', assignCoupon)
+router.delete('/coupons/:id', deleteCoupon)
 
 export default router
