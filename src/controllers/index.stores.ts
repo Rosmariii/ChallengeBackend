@@ -4,13 +4,14 @@ import { QueryResult } from "pg";
 
 export const getStore = async (req: Request, res: Response): Promise<Response> => {
     let result = []
+    let response: QueryResult = await pool.query('SELECT * FROM stores');
+    let count = response.rowCount
 
     if(req.query.hasOwnProperty('name')) {
         const name = req.query.name;
         let response: QueryResult = await pool.query('SELECT * FROM stores WHERE name = $1', [name]);
         result = response.rows
     } else {
-        let response: QueryResult = await pool.query('SELECT * FROM stores');
         result = response.rows
     }
 
@@ -26,7 +27,7 @@ export const getStore = async (req: Request, res: Response): Promise<Response> =
         result = result.slice(0, 10)
     }
     
-    return res.send(result)
+    return res.json({result, total_store: count})
 }
 
 export const newStore = async (req: Request, res: Response): Promise<Response> => {
