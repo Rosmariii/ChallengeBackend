@@ -1,28 +1,32 @@
 # ChallengeBackend
 
-# Getting Started with Create proyect 
+# E-commerce style project
 
-This project was bootstrapped with [Create Node.js ](https://nodejs.dev/).
+This project was [Create Node.js ](https://nodejs.dev/) 
+The typescript language, the Postgres database and express were also used.
 
 ## Available Scripts
 
 In the project directory, you can run:
+npm install to install all the dependencies and then run with the npm run dev command
+which compiles the typescript files to javascript so that later node.js can interpret it.
 
-### `npm run dev`
+## Project status completed
 
-Runs the app in the development mode.\
-Open [process.env.PORT](process.env.PORT) to view it in the browser.
+## possible mistakes
+Taking into account my little knowledge, I am not sure that it is a scalable 
+project since it makes many queries to all the columns of the database. Also 
+by not having an access token, any user could modify the database.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Frequent questions
+How could scalability be improved? How could it be better organized?
+I still do not understand very well that it enters the .env file and I 
+have doubts if the main index.ts file that is in the src folder is too many or 
+if it is used in another way.
 
-### Use Postman
-Postman is an API platform for building and using APIs. Postman simplifies each step of the API lifecycle and streamlines collaboration so you can create better APIs—faster.
-You can make inquiries about Coupons and stores to verify the function of the app.
-[Download](https://www.postman.com/)
-
-
-
-### Use Postgres
-PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
-[Download](https://www.postgresql.org/)
+## resources
+https://typeorm.io/#/
+https://www.npmjs.com/package/email-validator
+https://www.npmjs.com/package/pg
+https://www.youtube.com/watch?v=z4BNZfZ1Wq8
+Rooftop Academy
