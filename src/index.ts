@@ -9,16 +9,13 @@ import { json } from 'body-parser'
 import indexRouts from "./routes/index"
 const app = express()
 
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(indexRouts)
 
 
-app.get('/', function(req: any, res: any){
-    res.json({message: "ddd"})
-})
+app.get('/', function(req: any, res: any){})
 
-app.listen(9000, () => {
-    console.log(`Example app listening at http://localhost:9000`)
-})
+app.listen(process.env.PORT)
 
