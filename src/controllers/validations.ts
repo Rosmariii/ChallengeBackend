@@ -1,3 +1,5 @@
+import { Any } from "typeorm";
+
 export function validationCoupon(codestring:string){
     const ruleCode = /^[a-zA-Z0-9]{8}/;
     const testCode = ruleCode.test(codestring) && codestring.length == 8; 
